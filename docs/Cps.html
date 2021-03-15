@@ -127,7 +127,7 @@ body {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
+    background-color: rgba(52, 135, 138, 1);
     background-image: linear-gradient(to top left,
                   rgba(0, 0, 0, .2),
                   rgba(0, 0, 0, .2) 30%,
@@ -147,7 +147,6 @@ body {
 </style>
 </head>
 <body>
-  <img id="logo" src="cursor.png" />
   <div id="content">
     Timer: <span id="timer"></span><br/>
     Score: <span id="score"></span><br/>
@@ -158,7 +157,7 @@ body {
   </div>
   <script type="text/javascript">
     var score; // to store the current score
-    var duration = 10; // 10 seconds
+    var duration = 5; // 5 seconds
     var startTime; // start time
     var ended = true; // boolean indicating if game is ended
     // we get DOM References for some HTML elements
@@ -208,7 +207,7 @@ body {
     // we display result to the user in delayed mode 
     //to update DOM elements just before the alert
     setTimeout(function() {
-      alert('You made ' + score + ' clicks in ' + duration + 
+      alert('Jij hebt ' + score + ' kliks per seconde ' + duration + 
       ' seconds. It is ' + clicsBySeconds + 
       ' clicks by seconds. Try again!');
     }, 10);

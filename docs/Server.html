@@ -96,14 +96,12 @@ body {
             overflow: hidden;
         }
     	input[type=text], textarea, select {
-            font: 17px Calibri;
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
         input[type=button]{ 
-            font: 17px Calibri;
             width: auto;
             float: right;
             cursor: pointer;
@@ -117,13 +115,13 @@ body {
         <!--Add few elements to the form-->
 
         <div>
-            <input type="text" id="txtName" placeholder="Naam" />
+            <input type="text" id="txtName" placeholder="Enter your name" />
         </div>
         <div>
-            <input type="text" id="txtAge" placeholder="Leeftijd" />
+            <input type="text" id="txtAge" placeholder="Enter your age" />
         </div>
         <div>
-            <input type="text" id="txtEmail" placeholder="Hier het email adress />
+            <input type="text" id="txtEmail" placeholder="Enter your email address" />
         </div>
         <div>
             <select id="selCountry">
@@ -131,17 +129,16 @@ body {
                 <option value="India">India</option>
                 <option value="Japan">Japan</option>
                 <option value="USA">USA</option>
-                <option value="EU">EU</option>
             </select>
         </div>
         <div>
-        <div>
-            <textarea id="msg" name="msg" placeholder="nog een leuk berichtje..." style="height:100px"></textarea>
+            <textarea id="msg" name="msg" placeholder="Write some message ..." style="height:100px"></textarea>
         </div>
+
+        <!--Add to button to save the data.-->
         <div>
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
         </div>
-
     </div>
 </body>
 <script>

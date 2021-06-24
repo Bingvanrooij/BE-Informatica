@@ -1,1 +1,208 @@
-f
+<html lang="en-US">
+ <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+ <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+ <style lang="en" type="text/css" id="dark-mode-custom-style"></style>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width,maximum-scale=2">
+   <link rel="stylesheet" type="text/css" media="screen" href="/BE-Informatica/assets/css/style.css?v=2d6c0fa4eb89a8841d797e17b7821e1f4b3658b3"
+   <!-- Begin van Tag -->
+   <title> BE - Home</title>
+   <meta name="generator"content="Jekyll v3.9.0">
+   <meta property="og:title" content="Welkom op onze Website!">
+   <meta property="og:locale" content="en_US">
+   <meta name="description" content="Informatica PO">
+   <meta property="og:description" content="Informatica PO">
+   <link rel="canonical" href="https://bingthekingnll.github.io/BE-Informatica/"
+   <meta property="og:url" content="https://bingthekingnll.github.io/BE-Informatica/">
+   <meta property="og:site_name" content="BE-Informatica">
+   <script type="application/ld+json">
+    {"@type":"WebSite","headline":"Welkom bij onze Website","url":"https://bingthekingnll.github.io/BE-Informatica/","description":"Informatica PO","name":"BE-Informatica","@context":"https://schema.org"}
+   </script>
+   <!-- End Jekyll SEO tag --> 
+   <style type="text/css"></style>
+ </head>
+<body>
+ <!-- HEADER -->
+ <div id="header_wrap" class="outer">
+  <header class-"inner">
+   <a id="forkme_banner" href="https://github.com/BingTheKingNLL/BE-Informatica">Codes</a>
+   <h1 id="project_title">BE-Informatica</h1>
+   <h2 id="project_tagline">Informatica PO</h2>
+  </header>
+ </div>
+ 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #3333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #70b587;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #636c85;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="Info.html">Info</a>
+  <a href="Contact.html">Contact</a>
+  <a href="game.html">Game</a>
+  <a href="Cps.html">Cps</a>
+  <a href="SignUp.html">SignUp</a>
+  <a href="Server.html">Server</a>
+</div>
+ 
+</body>
+</html>
+ <!-- Het Onder het Begin -->
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Save form Data in a Text File using JavaScript</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    	div {
+            padding: 10px;
+            background-color: #f6f6f6;
+            overflow: hidden;
+        }
+    	input[type=text], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=button]{ 
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+        <!--Add few elements to the form-->
+
+        <div>
+            <input type="text" id="txtName" placeholder="Enter your name" />
+        </div>
+        <div>
+            <input type="text" id="txtAge" placeholder="Enter your age" />
+        </div>
+        <div>
+            <input type="text" id="txtEmail" placeholder="Enter your email address" />
+        </div>
+        <div>
+            <select id="selCountry">
+                <option selected value="">-- Choose the country --</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="USA">USA</option>
+                <option value="Europe">EU</option>       
+            </select>
+        </div>
+        <div>
+            <textarea id="msg" name="msg" placeholder="Write some message ..." style="height:100px"></textarea>
+        </div>
+
+        <!--Add to button to save the data.-->
+        <div>
+            <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
+        </div>
+    </div>
+</body>
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+    	const name = document.getElementById('txtName');
+        const age = document.getElementById('txtAge');
+        const email = document.getElementById('txtEmail');
+        const country = document.getElementById('selCountry');
+        const msg = document.getElementById('msg');
+        
+        // This variable stores all the data.
+        let data = 
+            '\r Name: ' + name.value + ' \r\n ' + 
+            'Age: ' +age.value + ' \r\n ' + 
+            'Email: ' + email.value + ' \r\n ' + 
+            'Country: ' + country.value + ' \r\n ' + 
+            'Message: ' + msg.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'formData.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+</html>
+
+ <!-- Het onderste Stuk -->
+ </div id="footer_wrap" class="outer">
+  <footer class="inner"
+   <p class="copyright">
+    BE-Informatica gerunt door
+    <a href="https://github.com/BingTheKingNLL" style="color:black">Bing en Enzo</a>
+   </p>
+   <p>
+    "Gemaakt door "
+    <a href="https://www.instagram.com/btk_043/" style="color:black">Instagram</a>
+   </p>
+   <p>
+    "Gemaakt door "
+    <a href="https://www.instagram.com/enzobrandts16_03/" style="color:black" >Instagram</a>
+   </p>
+   </footer>
+  </div>
+ </body>
+</html>
+
+
+
+     
+
+

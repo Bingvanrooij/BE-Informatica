@@ -82,69 +82,105 @@ body {
 </body>
 </html>
  <!-- Het Onder het Begin -->
- <div id="main_content_wrap" class="outer">
-  <section id="main_content_wrap" class="outer">
-   <h2 id="welkom-bij-onze-website">Welkom bij onze Website</h2>
-   <p>    Deze Site is voor ons PO opdracht deze hebben wij zelf gescherven.
-          Klik op info voor Informatie en Samenvatting over InformaticaOnline!</p>
-   <h3 id="informatica">Informatica</h3>
-   <p>Deze site komt er informatie over informatica</p>
-   <h3 id="informatie-digitaal">Informatica Digitaal</h3>
-  <div class="language-markdown highlighter-rouge">
-   <div class="highlight">
-    <pre class="highlight">
-     <code>
-       
-       
-      
-       <span class="p"> Deze website is ontstaan, door een informatica project op school. </span>
-       <span class="p"> Onze bedoeling was om onze medeleerlingen die deze cursus volgen te helpen met een klein samenvatting op onze site.</span>
-       <span class="p"> Deze samenvating zie je als je de knop naast home indrukt.</span>
-       <span class="p"> Wil je ons contacten bijvoorbeeld als je een eigen samenvatting hebt kun je ons contacten via de mails die staan bij contact.
-      
-       </span>
-      
-       
-       <span class="p"></span>
-      
-    
-       <span class="p">
-      </span>
-      
-      
-       <span class="p"></span>
-    
-       
-   
-       <span class="gs"</span>
-      
-       <span class="sb"></span>
-     
-      
-       
-       <span class="p">B</span>
-       <span class="nv"></span>
-       <span class="p"></span>
-       <span class="sx"></span>
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Save form Data in a Text File using JavaScript</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    	div {
+            padding: 10px;
+            background-color: #f6f6f6;
+            overflow: hidden;
+        }
+    	input[type=text], textarea, select {
+            font: 17px Calibri;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=button]{ 
+            font: 17px Calibri;
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+        <!--Add few elements to the form-->
 
-      </code>
-     </pre>
-   </div>
-   </div>
-   </h3 id="contact">Contact</h3>
-    <p class="copyright">
-   Onze Emails zijn:
-   </p>
-   <p>
-  BF127939@leerling.bonnfantencollge.nl
-    <a href="https://www.instagram.com/btk_043/">Instagram</a>
-   </p>
-   <p>
- BF127929@leerling.bonnefantencolleg.nl
-    <a href="https://www.instagram.com/enzobrandts16_03/">Instagram</a>
-   </p>
- </section>
- </div>
+        <div>
+            <input type="text" id="txtName" placeholder="Enter your name" />
+        </div>
+        <div>
+            <input type="text" id="txtAge" placeholder="Enter your age" />
+        </div>
+        <div>
+            <input type="text" id="txtEmail" placeholder="Enter your email address" />
+        </div>
+        <div>
+            <select id="selCountry">
+                <option selected value="">-- Choose the country --</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+        <div>
+            <textarea id="msg" name="msg" placeholder="Write some message ..." style="height:100px"></textarea>
+        </div>
+        <div>
+            <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
+        </div>
+
+    </div>
+</body>
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+    	const name = document.getElementById('txtName');
+        const age = document.getElementById('txtAge');
+        const email = document.getElementById('txtEmail');
+        const country = document.getElementById('selCountry');
+        const msg = document.getElementById('msg');
+        
+        // This variable stores all the data.
+        let data = 
+            '\r Name: ' + name.value + ' \r\n ' + 
+            'Age: ' +age.value + ' \r\n ' + 
+            'Email: ' + email.value + ' \r\n ' + 
+            'Country: ' + country.value + ' \r\n ' + 
+            'Message: ' + msg.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'formData.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+</html>
+
  <!-- Het onderste Stuk -->
  </div id="footer_wrap" class="outer">
   <footer class="inner"
